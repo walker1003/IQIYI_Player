@@ -1,4 +1,24 @@
 <RCC>
-    <qresource prefix="IQIYI_Player">
+    <qresource prefix="/IQIYI_Player">
+        <file>Icons/add_circle.svg</file>
+        <file>Icons/arrow_down.svg</file>
+        <file>Icons/cast_tv.svg</file>
+        <file>Icons/close.svg</file>
+        <file>Icons/drawer_left.svg</file>
+        <file>Icons/fullscreen.svg</file>
+        <file>Icons/max.svg</file>
+        <file>Icons/min.svg</file>
+        <file>Icons/next.svg</file>
+        <file>Icons/pin.svg</file>
+        <file>Icons/pip.svg</file>
+        <file>Icons/play.svg</file>
+        <file>Icons/prev.svg</file>
+        <file>Icons/settings.svg</file>
+        <file>Icons/snapshot.svg</file>
+        <file>Icons/speed.svg</file>
+        <file>Icons/stop.svg</file>
+        <file>Icons/volume.svg</file>
+        <file>Icons/main.qss</file>
+        <file>Icons/folder.png</file>
     </qresource>
 </RCC>

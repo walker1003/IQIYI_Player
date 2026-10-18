@@ -3,12 +3,9 @@
 Player::Player(QWidget *parent) : QMainWindow(parent)
 {
     ui.setupUi(this);
+    setWindowFlags(Qt::FramelessWindowHint | Qt::WindowMinMaxButtonsHint); // 去掉原生边框
 
-    // 1. 去掉原生边框
-    setWindowFlags(Qt::FramelessWindowHint | Qt::WindowMinMaxButtonsHint);
-
-    // 2. 关联标题栏按钮到窗体槽函数
-    connect(ui.btnClose, &QPushButton::clicked, this, &Player::close);
+    connect(ui.btnClose, &QPushButton::clicked, this, &Player::close); // 关联标题栏按钮到窗体槽函数
     connect(ui.btnMin, &QPushButton::clicked, this, &Player::showMinimized);
     connect(ui.btnMax, &QPushButton::clicked, this, [this]() {
         if (isMaximized()) showNormal();
@@ -19,8 +16,7 @@ Player::Player(QWidget *parent) : QMainWindow(parent)
 Player::~Player()
 {}
 
-// 3. 实现拖动标题栏移动窗口
-void Player::mousePressEvent(QMouseEvent* event) {
+void Player::mousePressEvent(QMouseEvent* event) { // 实现拖动标题栏移动窗口
     if (event->button() == Qt::LeftButton) {
         m_dragPos = event->globalPosition().toPoint() - frameGeometry().topLeft();
         event->accept();

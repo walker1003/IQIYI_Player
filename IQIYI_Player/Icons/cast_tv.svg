@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round">
+  <!-- 1. 电视机圆角屏幕（整体下沉：y从6.8到20.4） -->
+  <rect x="3" y="6.8" width="18" height="13.6" rx="2.5" stroke-width="2"/>
+
+  <!-- 2. 屏幕内随之下移的矢量 "T" -->
+  <line x1="7.2" y1="11.1" x2="11.2" y2="11.1" stroke-width="1.8"/>
+  <line x1="9.2" y1="11.1" x2="9.2" y2="16.1" stroke-width="1.8"/>
+
+  <!-- 3. 屏幕内随之下移的矢量 "V" -->
+  <polyline points="12.8,11.1 14.8,16.1 16.8,11.1" stroke-width="1.8"/>
+</svg>
