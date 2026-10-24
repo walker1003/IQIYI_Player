@@ -136,10 +136,7 @@ QWidget#widgetBottomBar {
 }</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <property name="spacing">
-     <number>0</number>
-    </property>
+   <layout class="QGridLayout" name="gridLayout">
     <property name="leftMargin">
      <number>0</number>
     </property>
@@ -152,7 +149,7 @@ QWidget#widgetBottomBar {
     <property name="bottomMargin">
      <number>0</number>
     </property>
-    <item>
+    <item row="0" column="0">
      <widget class="QWidget" name="widgetTitleBar" native="true">
       <property name="minimumSize">
        <size>
@@ -276,7 +273,7 @@ QWidget#widgetBottomBar {
       </layout>
      </widget>
     </item>
-    <item>
+    <item row="1" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
        <number>0</number>
@@ -574,10 +571,16 @@ QWidget#widgetBottomBar {
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page_2"/>
+      <widget class="QWidget" name="page_2">
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="GLRenderWidget" name="openGLWidget" native="true"/>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </item>
-    <item>
+    <item row="2" column="0">
      <widget class="QWidget" name="widgetBottomBar" native="true">
       <property name="minimumSize">
        <size>
@@ -827,6 +830,14 @@ QWidget#widgetBottomBar {
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>GLRenderWidget</class>
+   <extends>QWidget</extends>
+   <header>glrenderwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="Player.qrc"/>
  </resources>
