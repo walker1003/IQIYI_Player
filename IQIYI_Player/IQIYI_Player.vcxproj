@@ -99,7 +99,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <QtRcc Include="Player.qrc" />
-    <QtUic Include="Player.ui" />
     <QtMoc Include="Player.h" />
     <ClCompile Include="GLRenderWidget.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -107,6 +106,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="GLRenderWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="Player.ui" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

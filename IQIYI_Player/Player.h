@@ -19,6 +19,11 @@ protected:
     void mousePressEvent(QMouseEvent* event);
     void mouseMoveEvent(QMouseEvent* event);
 
+private slots:
+    void OnMaxBtnClickd();
+    void OnOpenBtnClickd();
+    void OnDrawerBtnClickd();
+
 private:
     Ui::PlayerClass ui;
     QPoint m_dragPos;

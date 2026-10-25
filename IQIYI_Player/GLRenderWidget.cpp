@@ -68,19 +68,50 @@ void GLRenderWidget::resizeGL(int w, int h) {
 }
 
 void GLRenderWidget::paintGL() {
+    // 1. 获取物理像素宽高（兼容 125%、150% 等 Windows 高分屏缩放）
+    int winWidth = this->width() * this->devicePixelRatio();
+    int winHeight = this->height() * this->devicePixelRatio();
+
+    // 2. 先将整个视口清空为纯黑背景
+    glViewport(0, 0, winWidth, winHeight);
     glClear(GL_COLOR_BUFFER_BIT);
 
+    // 如果还没有加载图片或图片尺寸非法，则不渲染画面
     if (m_currentFrameData.empty() || m_videoWidth <= 0 || m_videoHeight <= 0) {
         return;
     }
 
+    // 3. 计算保持原始宽高比的居中显示区域
+    float imgRatio = (float)m_videoWidth / (float)m_videoHeight;
+    float winRatio = (float)winWidth / (float)winHeight;
+
+    int renderX = 0, renderY = 0;
+    int renderW = winWidth, renderH = winHeight;
+
+    if (winRatio > imgRatio) {
+        // 窗口比图片更宽：高度铺满，左右自适应留黑边
+        renderH = winHeight;
+        renderW = (int)(winHeight * imgRatio);
+        renderX = (winWidth - renderW) / 2;
+        renderY = 0;
+    }
+    else {
+        // 窗口比图片更高：宽度铺满，上下自适应留黑边
+        renderW = winWidth;
+        renderH = (int)(winWidth / imgRatio);
+        renderX = 0;
+        renderY = (winHeight - renderH) / 2;
+    }
+
+    // 4. 将绘制区域限制在计算出的居中视口内
+    glViewport(renderX, renderY, renderW, renderH);
+
     m_program.bind();
 
-    // 如果有新帧到达，上传纹理到显卡
+    // 如果有新数据到达，上传纹理到显卡
     if (m_hasNewFrame) {
         glBindTexture(GL_TEXTURE_2D, m_textureId);
-        // 【极其重要】设置 1 字节对齐，防止奇数宽度的图片花屏/倾斜
-        glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+        glPixelStorei(GL_UNPACK_ALIGNMENT, 1); // 1字节对齐防止花屏
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, m_videoWidth, m_videoHeight,
             0, GL_RGB, GL_UNSIGNED_BYTE, m_currentFrameData.data());
         m_hasNewFrame = false;
@@ -91,7 +122,7 @@ void GLRenderWidget::paintGL() {
     glBindTexture(GL_TEXTURE_2D, m_textureId);
     m_program.setUniformValue("uTexture", 0);
 
-    // 绘制全屏四边形
+    // 绘制顶点（四边形）
     glBindBuffer(GL_ARRAY_BUFFER, m_vbo);
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)0);

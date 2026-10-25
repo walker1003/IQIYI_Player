@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1124</width>
-    <height>611</height>
+    <width>1494</width>
+    <height>721</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -35,7 +35,7 @@ QMainWindow, QWidget#centralwidget {
 
 /* 3. 顶部系统按钮（最小化、最大化、关闭等） */
 QWidget#widgetTitleBar {
-    background-color: #060e0a; /* 接近纯黑的极深色，也可以直接写 #000000 */
+    background-color: #060e0a;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 #widgetTitleBar QPushButton {
@@ -48,11 +48,10 @@ QWidget#widgetTitleBar {
     background-color: rgba(255, 255, 255, 0.1);
 }
 #btnClose:hover {
-    background-color: #e81123 !important; /* 关闭按钮悬浮变红 */
+    background-color: #e81123 !important;
 }
 
 /* 欢迎文案：纯白高亮 */
-/* 3. 中间欢迎区单独保持墨绿色（与你的插画融合） */
 QWidget#pageWelcome, QStackedWidget#stackedWidget {
     background-color: #13271f;
 }
@@ -62,14 +61,13 @@ QWidget#pageWelcome, QStackedWidget#stackedWidget {
     font-weight: bold !important;
 }
 
-/* 1. 外层容器：负责整个绿色胶囊的背景、圆角和阴影，浑然一体 */
+/* 1. 外层容器：负责整个绿色胶囊的背景、圆角和阴影 */
 QWidget#widgetOpenGroup {
     background-color: #00be64;
     border-radius: 18px;
     min-height: 36px;
     max-height: 36px;
 }
-/* 鼠标滑过整个胶囊微亮 */
 QWidget#widgetOpenGroup:hover {
     background-color: #00d671;
 }
@@ -85,26 +83,26 @@ QPushButton#btnOpen {
     padding-right: 12px;
 }
 
-/* 3. 右边小三角：透明背景，左侧带一条原版的微弱细分割线 */
+/* 3. 右边小三角 */
 QPushButton#btnOpenMore {
     background-color: transparent;
     border: none;
-    border-left: 1px solid rgba(255, 255, 255, 0.25); /* 原版标志性的细分割线 */
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
     min-width: 28px;
     max-width: 28px;
 }
 
 /* 右侧贴边抽屉收缩按钮 */
 #btnDrawer {
-    background-color: #081510; /* 更深沉的底色 */
+    background-color: #081510;
     border: none;
-    border-top-left-radius: 8px;     /* 更圆润的半弧 */
+    border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
-    min-width: 18px;                 /* 宽度加宽 */
+    min-width: 18px;
     max-width: 18px;
-    min-height: 60px;                /* 高度明显拉长 */
+    min-height: 60px;
     max-height: 60px;
     padding-right: 2px;
 }
@@ -112,10 +110,10 @@ QPushButton#btnOpenMore {
     background-color: #122c22;
 }
 
-/* 7. 底部控制栏所有按钮（去边框、透明、悬停微亮） */
+/* 底部控制栏 */
 QWidget#widgetBottomBar {
-    background-color: #060e0a; /* 接近纯黑的极深色，也可以直接写 #000000 */
-    border-top: 1px solid rgba(255, 255, 255, 0.04); /* 可选：上方极细弱的分界线 */
+    background-color: #060e0a;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
 }
 #widgetBottomBar QPushButton {
     background: transparent;
@@ -129,14 +127,84 @@ QWidget#widgetBottomBar {
     border-radius: 4px;
 }
 
-/* 8. 底部中间大播放键稍微加大 */
 #btnPlay {
     min-width: 42px;
     min-height: 42px;
+}
+
+/* 右侧面板整体背景 */
+QWidget#widgetPlaylist {
+    background-color: #0e1511;
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+QWidget#widgetPlaylistHeader {
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+#lblPlaylistTitle {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#lblPlaylistCount {
+    color: #5d7066;
+    font-size: 11px;
+    padding-left: 4px;
+}
+
+#widgetPlaylistHeader QPushButton {
+    background: transparent;
+    border: none;
+    min-width: 26px;
+    max-width: 26px;
+    min-height: 26px;
+    max-height: 26px;
+}
+#widgetPlaylistHeader QPushButton:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+}
+
+#lblEmptyTip {
+    color: #55665d;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 14px;
+}
+
+QWidget#widgetAddGroup {
+    background-color: #00be64;
+    border-radius: 17px;
+    min-height: 34px;
+    max-height: 34px;
+}
+QWidget#widgetAddGroup:hover {
+    background-color: #00d671;
+}
+
+QPushButton#btnAddFile {
+    background-color: transparent;
+    color: #ffffff !important;
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+    padding-left: 14px;
+    padding-right: 6px;
+}
+
+QPushButton#btnAddMore {
+    background-color: transparent;
+    border: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+    min-width: 26px;
+    max-width: 26px;
 }</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QGridLayout" name="gridLayout">
+   <layout class="QGridLayout" name="gridLayout" columnstretch="1,0">
     <property name="leftMargin">
      <number>0</number>
     </property>
@@ -149,7 +217,10 @@ QWidget#widgetBottomBar {
     <property name="bottomMargin">
      <number>0</number>
     </property>
-    <item row="0" column="0">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item row="0" column="0" colspan="2">
      <widget class="QWidget" name="widgetTitleBar" native="true">
       <property name="minimumSize">
        <size>
@@ -275,6 +346,12 @@ QWidget#widgetBottomBar {
     </item>
     <item row="1" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>1</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="currentIndex">
        <number>0</number>
       </property>
@@ -295,25 +372,6 @@ QWidget#widgetBottomBar {
         <property name="bottomMargin">
          <number>0</number>
         </property>
-        <item>
-         <widget class="QLabel" name="lblBlank">
-          <property name="minimumSize">
-           <size>
-            <width>160</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>160</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
         <item>
          <spacer name="horizontalSpacer_5">
           <property name="orientation">
@@ -347,18 +405,6 @@ QWidget#widgetBottomBar {
            </property>
            <item>
             <widget class="QLabel" name="lblIllustration">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>16777215</height>
-              </size>
-             </property>
              <property name="text">
               <string/>
              </property>
@@ -375,18 +421,6 @@ QWidget#widgetBottomBar {
              <layout class="QVBoxLayout" name="verticalLayout_2">
               <property name="spacing">
                <number>6</number>
-              </property>
-              <property name="leftMargin">
-               <number>9</number>
-              </property>
-              <property name="topMargin">
-               <number>9</number>
-              </property>
-              <property name="rightMargin">
-               <number>9</number>
-              </property>
-              <property name="bottomMargin">
-               <number>9</number>
               </property>
               <item>
                <spacer name="verticalSpacer">
@@ -411,9 +445,6 @@ QWidget#widgetBottomBar {
                 </property>
                 <property name="text">
                  <string>欢迎使用爱奇艺万能播放</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
                 </property>
                </widget>
               </item>
@@ -449,18 +480,6 @@ QWidget#widgetBottomBar {
                  </property>
                  <item>
                   <widget class="QPushButton" name="btnOpen">
-                   <property name="minimumSize">
-                    <size>
-                     <width>0</width>
-                     <height>36</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>16777215</width>
-                     <height>36</height>
-                    </size>
-                   </property>
                    <property name="text">
                     <string>打开文件</string>
                    </property>
@@ -534,7 +553,7 @@ QWidget#widgetBottomBar {
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>304</width>
+            <width>40</width>
             <height>20</height>
            </size>
           </property>
@@ -580,7 +599,256 @@ QWidget#widgetBottomBar {
       </widget>
      </widget>
     </item>
-    <item row="2" column="0">
+    <item row="1" column="1">
+     <widget class="QWidget" name="widgetPlaylist" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>280</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>280</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QWidget" name="widgetPlaylistHeader" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>42</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>42</height>
+          </size>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QLabel" name="lblPlaylistTitle">
+            <property name="text">
+             <string>播放列表</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblPlaylistCount">
+            <property name="text">
+             <string>共0个</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnListAdd">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="Player.qrc">
+              <normaloff>:/IQIYI_Player/Icons/list_add.svg</normaloff>:/IQIYI_Player/Icons/list_add.svg</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnListPlay">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="Player.qrc">
+              <normaloff>:/IQIYI_Player/Icons/list_play.svg</normaloff>:/IQIYI_Player/Icons/list_play.svg</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnListMode">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="Player.qrc">
+              <normaloff>:/IQIYI_Player/Icons/list_mode.svg</normaloff>:/IQIYI_Player/Icons/list_mode.svg</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnListClear">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="Player.qrc">
+              <normaloff>:/IQIYI_Player/Icons/list_clear.svg</normaloff>:/IQIYI_Player/Icons/list_clear.svg</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnListSearch">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="Player.qrc">
+              <normaloff>:/IQIYI_Player/Icons/list_search.svg</normaloff>:/IQIYI_Player/Icons/list_search.svg</iconset>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QStackedWidget" name="stackedWidget_2">
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <widget class="QWidget" name="pageEmpty">
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <spacer name="verticalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="lblEmptyBox">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="Player.qrc">:/IQIYI_Player/Icons/emptybox.png</pixmap>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="lblEmptyTip">
+             <property name="text">
+              <string>列表中暂时没有文件</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="widgetAddGroup" native="true">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>34</height>
+              </size>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_7">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QPushButton" name="btnAddFile">
+                <property name="text">
+                 <string>打开文件</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="Player.qrc">
+                  <normaloff>:/IQIYI_Player/Icons/add_circle.svg</normaloff>:/IQIYI_Player/Icons/add_circle.svg</iconset>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnAddMore">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="Player.qrc">
+                  <normaloff>:/IQIYI_Player/Icons/arrow_down.svg</normaloff>:/IQIYI_Player/Icons/arrow_down.svg</iconset>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="pageList"/>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="2">
      <widget class="QWidget" name="widgetBottomBar" native="true">
       <property name="minimumSize">
        <size>

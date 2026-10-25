@@ -26,9 +26,6 @@
     <QtRcc Include="Player.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
-    <QtUic Include="Player.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
     <QtMoc Include="Player.h">
       <Filter>Header Files</Filter>
     </QtMoc>
@@ -48,5 +45,10 @@
     <QtMoc Include="GLRenderWidget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="Player.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
 </Project>
